@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head></h:head>
+<h:body>
+	<h1>Create</h1>
+	<hr />	
+	<h:form>
+		<h:panelGrid styleClass="createTable" columns="3" cellpadding="4"
+			cellspacing="0">
+
+			<h:outputLabel for="name">Name:</h:outputLabel>
+			<h:inputText id="name" size="45"
+				value="#{customerBean.customer.name}" required="true"
+				requiredMessage="Name is required" />
+			<h:message for="name" style="color:red" />
+
+			<h:outputLabel for="email">Email:</h:outputLabel>
+			<h:inputText id="email" size="45"
+				value="#{customerBean.customer.email}" required="true"
+				requiredMessage="Email is required" />
+			<h:message for="email" style="color:red" />
+
+			<h:outputLabel for="address">Address:</h:outputLabel>
+			<h:inputText id="address" size="45"
+				value="#{customerBean.customer.address}" required="true"
+				requiredMessage="Address is required" />
+			<h:message for="address" style="color:red" />
+
+			<h:commandButton action="#{customerBean.createCustomer()}"
+				value="Create Customer" />
+		</h:panelGrid>
+
+		<h:panelGrid styleClass="navTable">
+			<h:link outcome="index" value="List Customers" />
+		</h:panelGrid>
+	</h:form>
+
+</h:body>
+</html>

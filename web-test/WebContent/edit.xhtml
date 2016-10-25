@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head></h:head>
+<h:body>
+	<h1>Edit</h1>
+	<hr />
+
+	<h:form>
+		<h:panelGrid styleClass="editTable" columns="2" cellpadding="4"
+			cellspacing="0">
+			<h:outputLabel value="Customer Id" id="customerId" />
+			<h:outputText value="#{customerBean.customer.customerId}" />
+			<h:outputLabel value="Name" id="name" />
+			<h:inputText value="#{customerBean.customer.name}" />
+			<h:outputLabel value="Email" id="Email" />
+			<h:inputText value="#{customerBean.customer.email}" />
+			<h:outputText value="Address" id="address" />
+			<h:inputText value="#{customerBean.customer.address}" />
+
+			<h:commandButton action="#{customerBean.updateCustomer()}"
+				value="Edit Customer" />
+		</h:panelGrid>
+
+		<h:panelGrid styleClass="navTable">
+			<h:link outcome="view" value="View Details" includeViewParams="true">
+				<f:param name="customerId"
+					value="#{customerBean.customer.customerId}"></f:param>
+			</h:link>
+			<h:link outcome="index" value="List Customers" />
+		</h:panelGrid>
+	</h:form>
+
+</h:body>
+</html>
